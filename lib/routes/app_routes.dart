@@ -22,12 +22,12 @@ class AppRoutes {
 
       case onboarding:
         return MaterialPageRoute(
-          builder: (_) => const LoginScreen(),
+          builder: (_) => const OnboardingScreen(),
         );
 
       case login:
         return MaterialPageRoute(
-          builder: (_) => const OnboardingScreen(),
+          builder: (_) => const LoginScreen(),
         );
 
       case home:
