@@ -1,5 +1,7 @@
 import 'package:e_learning_app/routes/app_routes.dart';
+import 'package:e_learning_app/views/auth/forgot_password_screen.dart';
 import 'package:e_learning_app/views/auth/login_screen.dart';
+import 'package:e_learning_app/views/auth/register_screen.dart';
 import 'package:e_learning_app/views/home/home_screen.dart';
 import 'package:e_learning_app/views/onboarding/onboarding_screen.dart';
 import 'package:e_learning_app/views/splash/splash_screen.dart';
@@ -20,6 +22,16 @@ class AppPages {
     GetPage(
       name: AppRoutes.login,
       page: () => const LoginScreen(),
+    ),
+
+    GetPage(
+      name: AppRoutes.register,
+      page: () => const RegisterScreen(),
+    ),
+
+    GetPage(
+      name: AppRoutes.forgotPassword,
+      page: () => const ForgotPasswordScreen(),
     ),
 
     GetPage(
