@@ -1,0 +1,47 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:e_learning_app/models/question.dart';
+
+class Quiz {
+  final String id;
+  final String title;
+  final String description;
+  final int timeLimit;
+  final List<Question> questions;
+  final DateTime createdAt;
+  final bool isActive;
+
+  Quiz({
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.timeLimit,
+    required this.questions,
+    required this.createdAt,
+    this.isActive = true,
+  });
+
+  factory Quiz.fromJson(Map<String, dynamic> json) {
+    return Quiz(
+      id: json['id'] ?? '',
+      title: json['title'] ?? '',
+      description: json['description'] ?? '',
+      timeLimit: json['timeLimit'] ?? '',
+      questions: (json['questions'] as List<dynamic>)
+          .map((q) => Question.fromMap(q))
+          .toList(),
+      createdAt: DateTime.parse(json['createdAt']),
+      isActive: json['id'] ?? true,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'description': description,
+      'timeLimit': timeLimit,
+      'questions': questions.map((q) => q.toMap()).toList(),
+      'createdAt': createdAt.toIso8601String(),
+      'isActive': isActive,
+    };
+  }
+}
