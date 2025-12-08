@@ -95,6 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 20),
 
                   Form(
+                    key: _formKey,
                     child: Column(
                       children: [
                         // Email textfield

@@ -128,6 +128,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           label: 'Email',
                           prefixIcon: Icons.mail_outline,
                           controller: _emailController,
+                          keyboardType:
+                              TextInputType.emailAddress,
                           validator:
                               FormValidator.validateEmail,
                         ),
