@@ -1,8 +1,8 @@
 import 'package:e_learning_app/core/utils/validators.dart';
 import 'package:e_learning_app/models/user_model.dart';
 import 'package:e_learning_app/routes/app_routes.dart';
-import 'package:e_learning_app/widgets/common/custom_button.dart';
-import 'package:e_learning_app/widgets/common/custom_textfield.dart';
+import 'package:e_learning_app/views/widgets/common/custom_button.dart';
+import 'package:e_learning_app/views/widgets/common/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -265,7 +265,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       if (_selectedRole == UserRole.teacher) {
         Get.offAllNamed(AppRoutes.teacherHome);
       } else {
-        Get.offAllNamed(AppRoutes.home);
+        Get.offAllNamed(AppRoutes.main);
       }
     } else if (_selectedRole == null) {
       ScaffoldMessenger.of(context).showSnackBar(
