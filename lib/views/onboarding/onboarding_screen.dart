@@ -1,6 +1,7 @@
 import 'package:e_learning_app/core/theme/app_colors.dart';
 import 'package:e_learning_app/models/onboarding_item.dart';
 import 'package:e_learning_app/routes/app_routes.dart';
+import 'package:e_learning_app/services/storage_service.dart';
 import 'package:e_learning_app/views/onboarding/widgets/onboarding_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -43,6 +44,11 @@ class _OnboardingScreenState
     ),
   ];
 
+  void _completeOnboarding() async {
+    await StorageService.setFirstTime(false);
+    Get.offAllNamed(AppRoutes.login);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,8 +75,7 @@ class _OnboardingScreenState
             top: 50,
             right: 20,
             child: TextButton(
-              onPressed: () =>
-                  Get.offAllNamed(AppRoutes.login),
+              onPressed: _completeOnboarding,
               child: Text(
                 'Skip',
                 style: const TextStyle(
@@ -107,7 +112,7 @@ class _OnboardingScreenState
                 ElevatedButton(
                   onPressed: () {
                     if (_currentPage == _pages.length - 1) {
-                      Get.offAllNamed(AppRoutes.login);
+                      _completeOnboarding();
                     } else {
                       _pageController.nextPage(
                         duration: const Duration(

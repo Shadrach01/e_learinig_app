@@ -5,6 +5,7 @@ import 'package:e_learning_app/views/auth/register_screen.dart';
 import 'package:e_learning_app/views/home/home_screen.dart';
 import 'package:e_learning_app/views/onboarding/onboarding_screen.dart';
 import 'package:e_learning_app/views/splash/splash_screen.dart';
+import 'package:e_learning_app/views/teacher/teacher_home_screen.dart';
 import 'package:get/get.dart';
 
 class AppPages {
@@ -37,6 +38,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.home,
       page: () => const HomeScreen(),
+    ),
+
+    GetPage(
+      name: AppRoutes.teacherHome,
+      page: () => const TeacherHomeScreen(),
     ),
   ];
 }
